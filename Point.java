@@ -26,12 +26,7 @@ public class Point {
         return (((Point) o).getX() == x) && (((Point) o).getY() == y);
     }
 
-    @Override
-    public int hashCode() {
-        return Integer.valueOf(x) ^ Integer.valueOf(y);
-    }
-
-    @Override
+//      @Override
     public String toString() {
         return Integer.toString(x) + "  " + Integer.toString(y);
     }

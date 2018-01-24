@@ -5,7 +5,6 @@ public class Field {
     private Cell[][] cells;
     private int rows;
     private int columns;
-    private Point choice;
     public boolean FlagS = false;
     boolean FlagF = false;
     Point start;
@@ -17,11 +16,13 @@ public class Field {
         cells = new Cell[rows][columns];
     }
 
-    public enum Cell {
+    public enum Cell {//обозначение элементов на поле
         Start, Finish, Barrier
     }
 
     public void putStart(int a, int b) {
+        //выбор клетки как старта,если уже есть,то старый удаляется
+        //и записывается новый
         if (FlagS == false) {
             FlagS = true;
             cells[a][b] = Cell.Start;
@@ -81,7 +82,6 @@ public class Field {
 
     public int getRows() {
         return rows;
-
     }
 
     public int getColumns() {
